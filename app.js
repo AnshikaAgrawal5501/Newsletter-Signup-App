@@ -4,7 +4,7 @@ const request = require('request');
 const https = require('https');
 require('dotenv').config();
 
-//console.log(process.env.API_KEY);
+console.log(process.env.API_KEY);
 
 const app = express();
 const port = 3000;
