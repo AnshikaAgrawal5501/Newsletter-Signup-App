@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const request = require('request');
 const https = require('https');
+const apiKeyOriginal = require('./confidential.js');
 
 const app = express();
 const port = 3000;
@@ -15,7 +16,7 @@ app.get('/', function(req, res) {
 
 app.post('/', function(req, res) {
 
-    const apiKey = '10befe28d7483a33d382e10c8734559b-us6';
+    const apiKey = apiKeyOriginal;
     const listId = '6c35550be3';
 
     const fName = req.body.firstName;
