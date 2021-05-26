@@ -2,7 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const request = require('request');
 const https = require('https');
-const apiKeyOriginal = require('./confidential.js');
+require('dotenv').config();
+
+//console.log(process.env.API_KEY);
 
 const app = express();
 const port = 3000;
@@ -16,7 +18,7 @@ app.get('/', function(req, res) {
 
 app.post('/', function(req, res) {
 
-    const apiKey = apiKeyOriginal;
+    const apiKey = process.env.API_KEY;
     const listId = '6c35550be3';
 
     const fName = req.body.firstName;
